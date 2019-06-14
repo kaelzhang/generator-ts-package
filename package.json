@@ -1,0 +1,55 @@
+{
+  "name": "generator-ts-package",
+  "version": "1.1.4",
+  "description": "Yeoman generator to create an npm package with typescript",
+  "scripts": {
+    "test": "nyc ava --timeout=10s",
+    "test-no-report": "NODE_DEBUG=generator-ts-package nyc ava --timeout=10s --verbose",
+    "lint": "eslint .",
+    "posttest": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
+  },
+  "files": [
+    "generators"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kaelzhang/generator-ts-package.git"
+  },
+  "keywords": [
+    "generator-ts-package",
+    "generator",
+    "yeoman generator",
+    "commonjs",
+    "generator typescript"
+  ],
+  "engines": {
+    "node": ">= 6"
+  },
+  "ava": {
+    "babel": false,
+    "files": [
+      "test/*.test.js"
+    ]
+  },
+  "author": "kaelzhang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kaelzhang/generator-ts-package/issues"
+  },
+  "devDependencies": {
+    "ava": "^1.4.1",
+    "codecov": "^3.3.0",
+    "nyc": "^13.3.0",
+    "eslint-config-ostai": "^3.0.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint": "^5.16.0"
+  },
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "common-generator-prompts": "^2.0.0",
+    "mustache": "^3.0.1",
+    "scaffold-generator": "^3.0.4",
+    "yeoman-generator": "^3.2.0",
+    "yosay": "^2.0.2"
+  }
+}
